@@ -23,55 +23,114 @@
 ]);
     </script>
     </div>
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script>
-    var diameter = 500, //max size of the bubbles
-    color    = d3.scale.category20b(); //color category
+		<!-- amCharts javascript sources -->
+		<script type="text/javascript" src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+		<script type="text/javascript" src="https://www.amcharts.com/lib/3/radar.js"></script>
+		<script type="text/javascript" src="https://www.amcharts.com/lib/3/themes/patterns.js"></script>
+		
 
-var bubble = d3.layout.pack()
-    .sort(null)
-    .size([diameter, diameter])
-    .padding(1.5);
-
-var svg = d3.select("body")
-    .append("svg")
-    .attr("width", diameter)
-    .attr("height", diameter)
-    .attr("class", "bubble");
-
-d3.csv("skills.csv", function(error, data){
-
-    //convert numerical values from strings to numbers
-    data = data.map(function(d){ d.value = +d["Amount"]; return d; });
-
-    //bubbles needs very specific format, convert data to this.
-    var nodes = bubble.nodes({children:data}).filter(function(d) { return !d.children; });
-
-    //setup the chart
-    var bubbles = svg.append("g")
-        .attr("transform", "translate(0,0)")
-        .selectAll(".bubble")
-        .data(nodes)
-        .enter();
-
-    //create the bubbles
-    bubbles.append("circle")
-        .attr("r", function(d){ return d.r; })
-        .attr("cx", function(d){ return d.x; })
-        .attr("cy", function(d){ return d.y; })
-        .style("fill", function(d) { return color(d.value); });
-
-    //format the text for each bubble
-    bubbles.append("text")
-        .attr("x", function(d){ return d.x; })
-        .attr("y", function(d){ return d.y + 5; })
-        .attr("text-anchor", "middle")
-        .text(function(d){ return d["Skill"]; })
-        .style({
-            "fill":"white", 
-            "font-family":"Helvetica Neue, Helvetica, Arial, san-serif",
-            "font-size": "12px"
-        });
-})</script>    
+		<!-- amCharts javascript code -->
+		<script type="text/javascript">
+			AmCharts.makeChart("chartdiv",
+				{
+					"type": "radar",
+					"categoryField": "Skill",
+					"radius": "38%",
+					"startDuration": 2,
+					"fontSize": 13,
+					"handDrawn": true,
+					"handDrawScatter": 0,
+					"handDrawThickness": 0,
+					"theme": "patterns",
+					"graphs": [
+						{
+							"balloonText": "[[value]] points relative skill",
+							"bullet": "round",
+							"bulletSize": 9,
+							"id": "AmGraph-1",
+							"lineAlpha": 1,
+							"lineThickness": 2,
+							"valueField": "Amount"
+						}
+					],
+					"guides": [],
+					"valueAxes": [
+						{
+							"axisTitleOffset": 15,
+							"gridType": "circles",
+							"id": "ValueAxis-1",
+							"maximum": 100,
+							"minimum": 0,
+							"axisAlpha": 0.54,
+							"dashLength": 3,
+							"gridAlpha": 0.51
+						}
+					],
+					"allLabels": [],
+					"balloon": {},
+					"titles": [],
+					"dataProvider": [
+						{
+							"Skill": "VMware vSphere",
+							"Amount": "100"
+						},
+						{
+							"Skill": "Windows Server",
+							"Amount": "95"
+						},
+						{
+							"Skill": "Exchange Server",
+							"Amount": "80"
+						},
+						{
+							"Skill": "Office365",
+							"Amount": "90"
+						},
+						{
+							"Skill": "Azure",
+							"Amount": "70"
+						},
+						{
+							"Skill": "AWS",
+							"Amount": "10"
+						},
+						{
+							"Skill": "Powershell",
+							"Amount": "50"
+						},
+						{
+							"Skill": "Veeam",
+							"Amount": "80"
+						},
+						{
+							"Skill": "DNS",
+							"Amount": "80"
+						},
+						{
+							"Skill": "Networking",
+							"Amount": "70"
+						},
+						{
+							"Skill": "Firewalls",
+							"Amount": "65"
+						},
+						{
+							"Skill": "Data Center",
+							"Amount": "70"
+						},
+						{
+							"Skill": "F-Secure",
+							"Amount": "90"
+						},
+						{
+							"Skill": "Customer Service",
+							"Amount": "90"
+						}
+					]
+				}
+			);
+		</script>
+		<div id="chartdiv" style="width: 100%; height: 400px; background-color: #FFFFFF;" ></div>
+	
 </body>
 </html>
