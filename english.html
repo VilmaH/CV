@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Vilma Hallikas">
+        <title>
+            CV - Vilma Hallikas
+        </title>
+        <style>
+        body {
+            background-color: #282828;
+        }
+        </style>
+        
+    </head>
+<body>
+        <h1 style="color:white; text-align:center;">Yhteystiedot</h1>
+        <p style="color:white; text-align:center;">
+            Vääränkoivuntie 8 as 16, 37630 Valkeakoski<br>
+            GSM 045-6313552<br>
+            firstname@lastname.com<br>
+            <a href="https://linkedin.com/in/vilmahallikas" style="color:white;">LinkedIn</a><br>
+            <a href="https://github.com/VilmaH" style="color:white;">Github</a><br>
+            </p>
+            <p><h1 style="color:white; text-align:center;">Education and work history</h1></p>
+            <p style="color:white; text-align:center;">
+            Greatest responsibilities during my time at Tamico Oy was managing data center, virtual environments and backup systems,<br>working as technical support for sales and improving services.
+            </p>
+    
+    <iframe width="100%" height="400" src="https://time.graphics/embed?v=1&id=160958" frameborder="0" allowfullscreen></iframe>
+    
+    <p><h1 style="color:white; text-align:center;">Language skills</h1></p>
+    <p style="color:white; text-align:center;">
+    Suomi - Native<br>
+    Englanti - Excellent<br>
+    Google-fu - Excellent<br></p>
+    <p><h1 style="color:white; text-align:center;">Best skills</h1></p>
+    <div id="chartdiv" style="width: 100%; height: 400px; background-color: #282828;" ></div>
+<!-- amCharts javascript sources -->
+<script type="text/javascript" src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script type="text/javascript" src="https://www.amcharts.com/lib/3/radar.js"></script>
+<script type="text/javascript" src="https://www.amcharts.com/lib/3/themes/dark.js"></script>
+
+
+<!-- amCharts javascript code -->
+<script type="text/javascript">
+    AmCharts.makeChart("chartdiv",
+        {
+            "type": "radar",
+            "categoryField": "Skill",
+            "radius": "38%",
+            "sequencedAnimation": false,
+            "accessible": false,
+            "fontSize": 13,
+            "handDrawn": true,
+            "handDrawScatter": 0,
+            "handDrawThickness": 0,
+            "theme": "dark",
+            "graphs": [
+                {
+                    "balloonText": "[[value]] points relative skill",
+                    "bullet": "round",
+                    "bulletSize": 9,
+                    "id": "AmGraph-1",
+                    "lineAlpha": 1,
+                    "lineThickness": 2,
+                    "valueField": "Amount"
+                }
+            ],
+            "guides": [],
+            "valueAxes": [
+                {
+                    "axisTitleOffset": 15,
+                    "gridType": "circles",
+                    "id": "ValueAxis-1",
+                    "maximum": 100,
+                    "minimum": 0,
+                    "autoGridCount": false,
+                    "axisAlpha": 0.54,
+                    "gridAlpha": 0.51,
+                    "labelsEnabled": false
+                }
+            ],
+            "allLabels": [],
+            "balloon": {},
+            "titles": [],
+            "dataProvider": [
+                {
+                    "Skill": "VMware vSphere",
+                    "Amount": "100"
+                },
+                {
+                    "Skill": "Windows Server",
+                    "Amount": "95"
+                },
+                {
+                    "Skill": "Exchange Server",
+                    "Amount": "80"
+                },
+                {
+                    "Skill": "Office365",
+                    "Amount": "90"
+                },
+                {
+                    "Skill": "Azure",
+                    "Amount": "50"
+                },
+                {
+                    "Skill": "AWS",
+                    "Amount": "30"
+                },
+                {
+                    "Skill": "Powershell",
+                    "Amount": "50"
+                },
+                {
+                    "Skill": "Veeam",
+                    "Amount": "80"
+                },
+                {
+                    "Skill": "Linux",
+                    "Amount": "60"
+                },
+                {
+                    "Skill": "DNS",
+                    "Amount": "80"
+                },
+                {
+                    "Skill": "LAN",
+                    "Amount": "70"
+                },
+                {
+                    "Skill": "Firewalls",
+                    "Amount": "65"
+                },
+                {
+                    "Skill": "Data Center",
+                    "Amount": "70"
+                },
+                {
+                    "Skill": "F-Secure",
+                    "Amount": "90"
+                },
+                {
+                    "Skill": "Customer service",
+                    "Amount": "90"
+                }
+            ]
+        }
+    );
+</script>
+<p><h1 style="color:white; text-align:center;">Sertifications</h1></p>
+<p style="color:white; text-align:center;">
+    F-Secure PSE/MSG - 2017<br>
+    F-Secure Client Security & PM - 2017<br>
+    F-Secure PSB - 2017<br>
+    Microsoft 70-640: Windows Server 2008 Active Directory Configuration - 2011<br>
+    VMWare VSP 6 - 2017<br>
+</p>
+<p><h1 style="color:white; text-align:center;">Hobbies</h1></p>
+<p style="color:white; text-align:center;">
+    Home automation/IoT<br>
+        - Arduino/C++ -<br>
+        - PHP/HTML/CSS/JS -<br><br>
+    <a href="https://en.wikipedia.org/wiki/Ingress_(video_game)" style="color:white;">Ingress - Mobile game</a><br>
+        - Teamwork -<br>
+        - Leading a team -<br>
+        - Strategic thinking -<br><br>
+    Boardgames<br>
+        - Teamwork -<br>
+        - Strategic thinking -<br><br>
+    Dogs<br>
+        - Editor-in-chief and layout
+    Archery<br>
+    Playing PC games every now and then<br>
+    <br>
+    <br>
+    <a href="vilma-hallikas-cv-en.pdf" style="color:white;">Download pdf-version</a>
+    <br>
+    <a href="index.html" style="color:white;">Finnish version</a>
+</p>
+</body>
+</html>
